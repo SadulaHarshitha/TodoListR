@@ -8,10 +8,13 @@ class TodoItems extends Component{
     createTasks(item){
         return (<span key={item.key}>
                 <li>{item.text}</li>
-                <button >Edit</button>
+                <button onClick={this.edit.bind(this,item.key)}>Edit</button>
                 <button onClick={this.delete.bind(this,item.key)}>
                 Delete</button>
                 </span>);
+    }
+    edit(key){
+        this.props.edit(key);
     }
     delete(key){
         this.props.delete(key);

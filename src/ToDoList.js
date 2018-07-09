@@ -5,10 +5,13 @@ class TodoList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            items :[]
+            items :[],
+            item : null
         }
         this.addItem=this.addItem.bind(this);
         this.deleteItem=this.deleteItem.bind(this);
+        this.editItem=this.editItem.bind(this);
+        this.UpdateItem=this.UpdateItem.bind(this);
     }
     addItem(e)
     {
@@ -27,11 +30,34 @@ class TodoList extends React.Component{
         this.inputElement.value="";
         e.preventDefault();
     }
+    UpdateItem(){
+            console.log("entered update");
+            var item= this.state.item;
+            console.log(item);
+            item.text=this.inputElement.value;
+            this.setState({
+                item : null
+            })
+    }
+    editItem(key){
+        console.log("entered edit");
+        var filteredItem=this.state.items.filter(function(item){
+            return (item.key===key);
+        })
+        this.setState({
+            item : filteredItem
+        });
+        var item= this.state.item;
+        console.log(item);
+        this.inputElement.value=filteredItem[0].text;
+        // this.deleteItem(key);
+    }
+
     deleteItem(key){
-            console.log(key);
             var filteredItems=this.state.items.filter(function(item){
                 return(item.key!==key)
             });
+            console.log(filteredItems);
             this.setState({
                 items: filteredItems
             });
@@ -40,12 +66,14 @@ class TodoList extends React.Component{
     {
       return(  
         <div className= "Todolist">
-            <form onSubmit={this.addItem}>
+            <div>
                 <input ref={(a)=> this.inputElement=a }placeholder="Enter Task"></input>
-                <button type="submit"> ADD </button>
-            </form>
+                <button type="submit" onClick={this.addItem}> ADD </button>
+                <button type="submit" onClick={this.updateItem}> Update </button>
+            </div>
             <TodoItems entries={this.state.items}
-                        delete={this.deleteItem} />
+                        delete={this.deleteItem} 
+                        edit={this.editItem} />
         </div>    
       );
     }

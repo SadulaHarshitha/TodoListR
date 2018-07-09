@@ -28,6 +28,3 @@
 ul.List{
     padding: 0px;
 }
-.Todolist .List li:hover{
-    cursor: pointer;
-}

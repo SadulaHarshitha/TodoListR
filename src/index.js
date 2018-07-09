@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import TodoList from "./ToDoList";
-import LoginController from "./login";
+import TodoList from "./ToDoList";
 ReactDOM.render(
     <div>
-      <LoginController/>
+      <TodoList/>
       </div>,
   document.getElementById('container')
 );

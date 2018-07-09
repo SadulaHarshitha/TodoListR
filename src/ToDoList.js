@@ -53,7 +53,8 @@ class TodoList extends React.Component{
                 <button type="submit"> ADD </button>
             </form>
             <TodoItems entries={this.state.items}
-                        delete={this.deleteItem} />
+                        delete={this.deleteItem} 
+                        edit={this.editItem}/>
         </div>    
       );
     }

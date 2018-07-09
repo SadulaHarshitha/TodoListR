@@ -9,6 +9,7 @@ class TodoList extends React.Component{
         }
         this.addItem=this.addItem.bind(this);
         this.deleteItem=this.deleteItem.bind(this);
+        this.editItem=this.editItem.bind(this);
     }
     addItem(e)
     {
@@ -26,6 +27,13 @@ class TodoList extends React.Component{
     });
         this.inputElement.value="";
         e.preventDefault();
+    }
+    editItem(key){
+        var filteredItem=this.state.items.filter(function(item){
+            return (item.key===key);
+        })
+        this.inputElement.value=filteredItem[0].text;
+        this.deleteItem(key);
     }
     deleteItem(key){
             console.log(key);

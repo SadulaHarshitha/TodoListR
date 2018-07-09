@@ -19,14 +19,17 @@ class TodoList extends React.Component{
                 text: this.inputElement.value,
                 key: Date.now()
             }
-        };
-    this.setState((prevState)=>{
-    return {
-        items: prevState.items.concat(newItem)
+            this.setState((prevState)=>{
+                return {
+                    items: prevState.items.concat(newItem)
+                    }
+                });
+            this.inputElement.value="";
+            e.preventDefault();
         }
-    });
-        this.inputElement.value="";
-        e.preventDefault();
+        else{
+            alert("Please Enter some task");
+        }
     }
     editItem(key){
         var filteredItem=this.state.items.filter(function(item){

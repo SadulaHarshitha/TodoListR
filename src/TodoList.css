@@ -1,0 +1,33 @@
+.Todolist  input{
+    padding:10px;
+    font-size: 16px;
+    border:2px;
+    width: 180px;
+}
+.Todolist button{
+    padding: 10px;
+    font-size: 16px;
+    margin:10px;
+    background-color: blue;
+    color: blanchedalmond;
+    border: 2px solid  blue;
+}
+.Todolist button:hover{
+    background-color: darkblue;
+    cursor: pointer;
+    border: 2px solid  darkblue;
+}
+.Todolist .List li{
+    color: black;
+    background-color: rgba(255,255,255, .5);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius:10px;
+
+}
+ul.List{
+    padding: 0px;
+}
+.Todolist .List li:hover{
+    cursor: pointer;
+}

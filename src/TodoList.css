@@ -17,14 +17,32 @@
     cursor: pointer;
     border: 2px solid  darkblue;
 }
-.Todolist .List li{
+.myLabelClass{
     color: black;
     background-color: rgba(255,255,255, .5);
     padding: 15px;
     margin-bottom: 15px;
     border-radius:10px;
-
+    width : 165px;
+    float: left}
+.myInputClass{
+    color: black;
+    background-color: rgba(255,255,255, .5);
+    padding: 0px;
+    margin-bottom: 15px;
+    border-radius:10px;
 }
-ul.List{
+.Todolist .List .Item button{
+    padding : 2px;
+    margin : 20px;
+    background-color: cadetblue;
+    border: 0.5px solid  cadetblue;
+    display:none;
+}
+.Todolist .List .Item:hover button{
+    display:inline;
+}
+ul{
+    text-align: left;
     padding: 0px;
 }

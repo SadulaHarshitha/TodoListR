@@ -1,20 +1,18 @@
 import React,{Component} from "react";
+import EditableLabel from "react-inline-editing";
 class TodoItems extends Component{
     constructor(props){
         super(props);
         this.createTasks=this.createTasks.bind(this);
-       // this.delete=this.delete.bind(this);
     }
     createTasks(item){
-        return (<span key={item.key}>
-                <li>{item.text}</li>
-                <button onClick={this.edit.bind(this,item.key)}>Edit</button>
+        return (<div key={item.key} className="Item">
+                <EditableLabel text={item.text}
+                                labelClassName='myLabelClass'
+                                inputClassName='myInputClass'/>
                 <button onClick={this.delete.bind(this,item.key)}>
                 Delete</button>
-                </span>);
-    }
-    edit(key){
-        this.props.edit(key);
+                </div>);
     }
     delete(key){
         this.props.delete(key);
